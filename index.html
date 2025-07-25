@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pump Efficiency Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pump Efficiency Calculator</h1>
+
+        <div class="input-section">
+            <div class="form-group">
+                <label for="pumpFlowValue">Pump Flow Value (C6):</label>
+                <input type="number" id="pumpFlowValue" step="any" required>
+            </div>
+
+            <div class="form-group">
+                <label>Select Unit for Flow (C5):</label>
+                <div class="radio-group">
+                    <input type="radio" id="unitM3s" name="flowUnit" value="1" checked>
+                    <label for="unitM3s">1: m³/s</label>
+                    
+                    <input type="radio" id="unitLpm" name="flowUnit" value="2">
+                    <label for="unitLpm">2: lpm</label>
+                    
+                    <input type="radio" id="unitLps" name="flowUnit" value="3">
+                    <label for="unitLps">3: lps</label>
+                    
+                    <input type="radio" id="unitUsgpm" name="flowUnit" value="4">
+                    <label for="unitUsgpm">4: Usgpm</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="specificSpeed">Specific Speed (F5):</label>
+                <input type="number" id="specificSpeed" step="any" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pumpType">Pump Type (F6):</label>
+                <select id="pumpType">
+                    <option value="">--Select Pump Type--</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="F">F</option>
+                    <option value="G">G</option>
+                    <option value="J">J</option>
+                    <option value="V">V</option>
+                </select>
+                <p id="pumpTypeDescription" class="description-text"></p>
+            </div>
+
+            <button id="calculateBtn">Calculate Efficiencies</button>
+        </div>
+
+        <div class="output-section">
+            <h2>Calculation Results</h2>
+            <div class="result-group">
+                <label>Efficiency at Optimum:</label>
+                <span id="efficiencyOptimum" class="result-value">--</span>
+            </div>
+            <div class="result-group">
+                <label>Efficiency Correction:</label>
+                <span id="efficiencyCorrection" class="result-value">--</span>
+            </div>
+            <div class="result-group">
+                <label>Efficiency Deviation:</label>
+                <span id="efficiencyDeviation" class="result-value">--</span>
+            </div>
+            <div class="result-group final-result">
+                <label>Actual Efficiency:</label>
+                <span id="actualEfficiency" class="result-value">--</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
