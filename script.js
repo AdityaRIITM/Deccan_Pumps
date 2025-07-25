@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Placeholder for the backend API endpoint
             // We will set up this backend later. For now, this will simulate.
             // When you have a Flask/Node.js backend, replace this URL:
-            const response = await fetch('http://127.0.0.1:5000/calculate', { // Adjust port if your backend uses a different one
+            const response = await fetch('https://deccan-pumps-2.onrender.com/calculate', { // Adjust port if your backend uses a different one
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
