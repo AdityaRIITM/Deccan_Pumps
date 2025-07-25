@@ -79,25 +79,25 @@ def calculate_efficiencies():
                                              0.01879 * f5_specific_speed - 0.9191)
 
         # --- F11: Efficiency Deviation Calculation ---
-        f11_efficiency_deviation = 0.0
-        if f4_pump_flow_m3s <= 0.05:
-            f11_efficiency_deviation = (19907642.3 * pow(f4_pump_flow_m3s, 4) -
-                                        2287352.57 * pow(f4_pump_flow_m3s, 3) +
-                                        90466.93 * pow(f4_pump_flow_m3s, 2) -
-                                        1521.98 * f4_pump_flow_m3s + 16.6181)
-        elif f4_pump_flow_m3s <= 0.9:
-            f11_efficiency_deviation = (56.5767 * pow(f4_pump_flow_m3s, 4) -
-                                        120.2869 * pow(f4_pump_flow_m3s, 3) +
-                                        89.0594 * pow(f4_pump_flow_m3s, 2) -
-                                        28.54 * f4_pump_flow_m3s + 6.008)
-        elif: f4_pump_flow_m3s <= 10:
-            f11_efficiency_deviation = (0.0003773 * pow(f4_pump_flow_m3s, 4) -
-                                        0.0105409 * pow(f4_pump_flow_m3s, 3) +
-                                        0.111228 * pow(f4_pump_flow_m3s, 2) -
-                                        0.55649 * f4_pump_flow_m3s + 2.2392)
-        else:
-                        f11_efficiency_deviation =1.03
-
+f11_efficiency_deviation = 0.0
+if f4_pump_flow_m3s <= 0.05:
+    f11_efficiency_deviation = (19907642.3 * pow(f4_pump_flow_m3s, 4) -
+                                2287352.57 * pow(f4_pump_flow_m3s, 3) +
+                                90466.93 * pow(f4_pump_flow_m3s, 2) -
+                                1521.98 * f4_pump_flow_m3s + 16.6181)
+elif f4_pump_flow_m3s <= 0.9:
+    f11_efficiency_deviation = (56.5767 * pow(f4_pump_flow_m3s, 4) -
+                                120.2869 * pow(f4_pump_flow_m3s, 3) +
+                                89.0594 * pow(f4_pump_flow_m3s, 2) -
+                                28.54 * f4_pump_flow_m3s + 6.008)
+elif f4_pump_flow_m3s <= 10:  # Removed the colon after 'elif'
+    f11_efficiency_deviation = (0.0003773 * pow(f4_pump_flow_m3s, 4) -
+                                0.0105409 * pow(f4_pump_flow_m3s, 3) +
+                                0.111228 * pow(f4_pump_flow_m3s, 2) -
+                                0.55649 * f4_pump_flow_m3s + 2.2392)
+else:
+    f11_efficiency_deviation = 1.03  # Corrected indentation for this line
+    
         # --- F12: Actual Efficiency Calculation & Formatting ---
         # The TEXT function in Excel handles formatting and concatenation.
         # We'll calculate the raw value and format it as a string in Python.
